@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  --color-charcoal: #1F2937;
+  --color-ink: #111827;
+  --color-gold: #D4A017;
+  --color-gold-soft: #E8C35A;
+  --font-sans: "Inter", "Noto Sans Gujarati", system-ui, sans-serif;
+  --font-display: "Playfair Display", "Noto Sans Gujarati", Georgia, serif;
+}
+
+html, body, #root { min-height: 100%; }
+body { background: var(--color-ink); color: #F3F4F6; -webkit-tap-highlight-color: transparent; }
+
+.card { background: var(--color-charcoal); border: 1px solid rgb(255 255 255 / 0.07); border-radius: 1.25rem; }
+
+@keyframes pulse-gold { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.04); } }
+.pulse-gold { animation: pulse-gold 1.6s ease-in-out infinite; }
+
+@keyframes flash { 0%, 100% { background: var(--color-gold); } 50% { background: #f6d66b; } }
+.flash { animation: flash .6s ease-in-out 6; }
+
+@media (prefers-reduced-motion: reduce) { .pulse-gold, .flash { animation: none; } }
